@@ -1,0 +1,52 @@
+$base-font-size: 16px;
+$use-rem: 1;
+
+$player-height: 70vh;
+
+$font-family-main: 'Sora', Inter, sans-serif;
+
+$color-bg: #5535be;
+$color-accent: #13e984;
+$color-bg-story: rgba(17, 14, 27, 0.1);
+$color-btn-nav: #030021;
+$color-text-main: #f7f7f7;
+$color-progress-empty: rgba(255, 255, 255, 0.42);
+$color-progress-filled: #eeeeee;
+$color-bg-dark: #111;
+$color-white: #fff;
+$color-black: #000;
+
+$border-radius-player: min(3%, 16px);
+
+$breakpoints: (
+  xxs: 360px,
+  xxs-v1: 375px,
+  // default
+  xxs-xs: 440px,
+  // 27.5 rem
+  xs: 528px,
+  // 33 rem
+  sm: 768px,
+  // 48 rem
+  md: 1024px,
+  // 64 rem
+  l: 1280px,
+  // 80 rem
+  xl: 1617px,
+  // 101.0625 rem
+  xxl: 1833px,
+  // 114.5625 rem
+  xxxl: 2264px, // 141.5 rem
+);
+
+$heading: (
+  font-size: 14px,
+  font-weight: 700,
+  line-height: 1.7,
+);
+
+$subheading: (
+  font-size: 12px,
+  font-weight: 700,
+  line-height: 1.3,
+);

@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:map';
+
+@function strip-unit($num) {
+  @if meta.type-of($num) == 'number' and not math.is-unitless($num) {
+    @return math.div($num, $num * 0 + 1);
+  }
+  @return $num;
+}
+
+@function rem($size, $base: $base-font-size) {
+  @return (#{math.div(strip-unit($size), strip-unit($base))}rem);
+}
+
+@function player-adapt($element-size, $player-size: 767px, $player-height: $player-height) {
+  @return calc(#{$player-height} * #{$element-size / $player-size});
+}
+
+@mixin font($type) {
+  @each $prop, $val in $type {
+    @if $prop == 'font-size' and $use-rem == 1 {
+      #{$prop}: var(--#{$prop}, #{rem($val)});
+    } @else {
+      #{$prop}: var(--#{$prop}, #{$val});
+    }
+  }
+}
+
+@mixin for-desktop() {
+  @media (min-width: rem(768px)) {
+    @content;
+  }
+}
+
+@mixin media($size) {
+  $value: map.get($breakpoints, $size);
+  @if $value {
+    @media (min-width: rem($value)) {
+      @content;
+    }
+  }
+}
