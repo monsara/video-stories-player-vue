@@ -1,6 +1,6 @@
 <template>
   <div class="stories-controls">
-    <button v-if="isDesktop && paused" class="btn-play btn-control" @click="$emit('play', true)">
+    <button v-if="isDesktop && paused" class="btn-play btn-control" @click="$emit('play')">
       <PlayIcon class="icon" />
     </button>
     <button v-if="isDesktop && !paused" class="btn-pause btn-control" @click="$emit('pause')">

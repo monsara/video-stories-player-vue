@@ -47,6 +47,7 @@ const props = defineProps<{
     subtitle: string
   }>
 }>()
+
 const videos = props.videos
 
 const currentIndex = ref(0)
@@ -54,8 +55,11 @@ const progress = ref(0)
 const paused = ref(false)
 const isMuted = ref(true)
 const isVideoReady = ref(false)
+const wasLongPress = ref(false)
+
 const windowWidth = ref(window.innerWidth)
 const videoRefs = ref<HTMLVideoElement[]>([])
+const playerRef = ref<HTMLElement | null>(null)
 
 const isDesktop = computed(() => windowWidth.value >= 768)
 
@@ -89,11 +93,8 @@ const onNext = () => {
   }
 }
 
-const onPlay = (unmute = false) => {
+const onPlay = () => {
   paused.value = false
-  if (unmute) {
-    isMuted.value = false
-  }
   const currentVideo = videoRefs.value[currentIndex.value]
   if (currentVideo) {
     currentVideo.muted = isMuted.value
@@ -128,10 +129,7 @@ const handleResize = () => {
   windowWidth.value = window.innerWidth
 }
 
-const playerRef = ref<HTMLElement | null>(null)
-const wasLongPress = ref(false)
-
-function handleLongPress(e: PointerEvent) {
+const handleLongPress = (e: PointerEvent) => {
   onPause()
   wasLongPress.value = true
 }
@@ -140,7 +138,7 @@ onLongPress(playerRef, handleLongPress, {
   delay: 500,
   modifiers: { prevent: true },
   onMouseUp: () => {
-    if (paused.value) onPlay(false)
+    if (paused.value) onPlay()
   },
 })
 
