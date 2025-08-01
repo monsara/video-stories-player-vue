@@ -27,8 +27,16 @@ import gsap from 'gsap'
 import StoriesProgressBar from './StoriesProgressBar.vue'
 import StoriesControls from './StoriesControls.vue'
 
+interface Video {
+  srcAv1: string
+  srcWebm: string
+  srcMp4: string
+  poster: string
+  subtitle: string
+}
+
 const props = defineProps<{
-  videos: Array<any>
+  videos: Array<Video>
   currentIndex: number
   progress: number
   isDesktop: boolean
