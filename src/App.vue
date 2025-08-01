@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import StoriesPlayer from './components/StoriesPlayer.vue'
 
-const videos = [
+interface Video {
+  srcAv1: string
+  srcWebm: string
+  srcMp4: string
+  poster: string
+  subtitle: string
+}
+
+const videos: Video[] = [
   {
     srcAv1: '/videos/av1/video1.av1',
     srcWebm: '/videos/webm/video1.webm',
@@ -29,7 +37,3 @@ const videos = [
 <template>
   <StoriesPlayer :videos="videos" />
 </template>
-
-<style lang="scss">
-@use './assets/styles/main.scss' as *;
-</style>
