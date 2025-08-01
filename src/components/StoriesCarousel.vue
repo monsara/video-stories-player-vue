@@ -10,7 +10,7 @@
       :srcMp4="videos[currentIndex].srcMp4"
       :autoplay="!paused"
       :muted="isMuted"
-      :setVideoRef="setVideoRef"
+      :setVideoRef
       :poster="videos[currentIndex].poster"
       @ended="$emit('next')"
       @timeupdate="$emit('timeupdate', $event)"

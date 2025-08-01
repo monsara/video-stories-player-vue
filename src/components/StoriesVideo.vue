@@ -7,8 +7,8 @@
     @loadedmetadata="$emit('loadedmetadata')"
     playsinline
     reload="metadata"
-    :autoplay="autoplay"
-    :muted="muted"
+    :autoplay
+    :muted
     width="430"
     height="767"
     v-bind="poster ? { poster } : {}"

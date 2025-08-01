@@ -1,24 +1,24 @@
 <template>
   <div ref="playerRef" class="stories-player">
     <StoriesHeader
-      :videos="videos"
-      :currentIndex="currentIndex"
-      :progress="progress"
-      :isDesktop="isDesktop"
-      :paused="paused"
-      :isMuted="isMuted"
+      :videos
+      :currentIndex
+      :progress
+      :isDesktop
+      :paused
+      :isMuted
       @play="onPlay"
       @pause="onPause"
       @toggle-mute="toggleMute"
     />
     <StoriesCarousel
-      :videos="videos"
-      :currentIndex="currentIndex"
-      :paused="paused"
-      :isMuted="isMuted"
-      :isDesktop="isDesktop"
-      :isVideoReady="isVideoReady"
-      :setVideoRef="setVideoRef"
+      :videos
+      :currentIndex
+      :paused
+      :isMuted
+      :isDesktop
+      :isVideoReady
+      :setVideoRef
       @next="onNext"
       @prev="onPrev"
       @handlePrev="handlePrev"
