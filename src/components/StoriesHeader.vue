@@ -10,9 +10,9 @@
         <div class="story-subtitle" ref="subtitleRef"></div>
       </div>
       <StoriesControls
-        :is-desktop="isDesktop"
-        :paused="paused"
-        :is-muted="isMuted"
+        :isDesktop
+        :paused
+        :isMuted
         @play="$emit('play')"
         @pause="$emit('pause')"
         @toggle-mute="$emit('toggle-mute')"

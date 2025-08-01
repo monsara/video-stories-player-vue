@@ -1,20 +1,23 @@
 <template>
   <div class="stories-progress">
     <div class="story-bar" v-for="(segment, i) in count" :key="i">
-      <div
-        class="story-filled"
-        :style="{ width: i < current ? '100%' : i > current ? '0%' : progress + '%' }"
-      ></div>
+      <div class="story-filled" :style="{ width: getSegmentWidth(i) }"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   count: number
   current: number
   progress: number
 }>()
+
+const getSegmentWidth = (index: number) => {
+  if (index < props.current) return '100%'
+  if (index > props.current) return '0%'
+  return `${props.progress}%`
+}
 </script>
 
 <style lang="scss" scoped>
