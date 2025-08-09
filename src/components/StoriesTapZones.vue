@@ -6,7 +6,10 @@
 </template>
 
 <script setup lang="ts">
-defineEmits(['prev', 'next'])
+defineEmits<{
+  prev: []
+  next: []
+}>()
 </script>
 
 <style lang="scss" scoped>

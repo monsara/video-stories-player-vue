@@ -12,7 +12,10 @@
 <script setup lang="ts">
 import ArrowIcon from '@/assets/icons/arrow.svg'
 
-defineEmits(['prev', 'next'])
+defineEmits<{
+  prev: []
+  next: []
+}>()
 </script>
 
 <style lang="scss" scoped>
