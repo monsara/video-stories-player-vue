@@ -21,10 +21,12 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
 import type { ComponentPublicInstance } from 'vue'
-import StoriesNavs from './StoriesNavs.vue'
-import StoriesTapZones from './StoriesTapZones.vue'
 import StoriesVideo from './StoriesVideo.vue'
+
+const StoriesNavs = defineAsyncComponent(() => import('./StoriesNavs.vue'))
+const StoriesTapZones = defineAsyncComponent(() => import('./StoriesTapZones.vue'))
 
 defineProps<{
   videos: Array<{
