@@ -42,7 +42,14 @@ defineProps<{
   setVideoRef: (el: Element | ComponentPublicInstance | null) => void
 }>()
 
-defineEmits(['next', 'prev', 'handlePrev', 'handleNext', 'timeupdate', 'loadedmetadata'])
+defineEmits<{
+  next: []
+  prev: []
+  handlePrev: []
+  handleNext: []
+  timeupdate: [event: Event]
+  loadedmetadata: []
+}>()
 </script>
 
 <style lang="scss" scoped>

@@ -44,7 +44,11 @@ const props = defineProps<{
   isMuted: boolean
 }>()
 
-defineEmits(['play', 'pause', 'toggle-mute'])
+defineEmits<{
+  play: []
+  pause: []
+  'toggle-mute': []
+}>()
 
 const subtitleRef = ref<HTMLElement | null>(null)
 

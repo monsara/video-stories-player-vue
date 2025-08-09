@@ -33,7 +33,11 @@ defineProps<{
   poster?: string
 }>()
 
-defineEmits(['ended', 'timeupdate', 'loadedmetadata'])
+defineEmits<{
+  ended: []
+  timeupdate: [event: Event]
+  loadedmetadata: []
+}>()
 </script>
 
 <style lang="scss" scoped>
