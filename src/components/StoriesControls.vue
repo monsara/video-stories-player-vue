@@ -29,7 +29,11 @@ defineProps<{
   isMuted: boolean
 }>()
 
-defineEmits(['play', 'pause', 'toggle-mute'])
+defineEmits<{
+  play: []
+  pause: []
+  'toggle-mute': []
+}>()
 </script>
 
 <style lang="scss" scoped>
