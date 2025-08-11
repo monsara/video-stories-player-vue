@@ -31,5 +31,8 @@ coverage
 
 public/videos/
 
+# Screenshots (BrowserTools)
+screenshots/
+
 # Project metadata and documentation
 project-meta/
