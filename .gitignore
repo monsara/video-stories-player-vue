@@ -30,3 +30,6 @@ coverage
 *.tsbuildinfo
 
 public/videos/
+
+# Project metadata and documentation
+project-meta/
